@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg Catch Challenge</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<div class="camera-page">
+
+    <h1>🥚 Egg Catch Challenge</h1>
+
+    <p>Gerakkan jari telunjuk untuk mengendalikan keranjang.</p>
+
+    <div class="camera-wrapper">
+
+        <!-- Kamera -->
+        <video id="camera" autoplay playsinline></video>
+
+        <!-- Canvas AI -->
+        <canvas id="outputCanvas"></canvas>
+
+        <!-- Keranjang -->
+        <div id="basket"></div>
+
+        <!-- Telur -->
+        <div id="egg"></div>
+
+        <div id="catchEffect"></div>
+
+    </div>
+
+    <p id="status">
+        🔴 Kamera belum aktif
+    </p>
+    <p id="lives">
+    ❤️❤️❤️
+</p>
+    <p id="score">
+    🥚 Score : 0
+</p>
+<p id="message"></p>
+<div id="missionPopup">
+
+    <div class="popup-box">
+
+        <h2>🏆 MISSION COMPLETE</h2>
+
+        <p class="mission-text">
+            Selamat!<br>
+            Kamu berhasil membuka Portfolio AI.
+        </p>
+       <button id="portfolioBtn" class="btn-portfolio">
+    🚀 Lihat Portfolio
+</button>
+
+        <button id="continueBtn">
+            🎮 Lanjut Bermain
+        </button>
+
+    </div>
+
+</div>
+<!-- TARUH DI SINI -->
+<div id="gameOverPopup">
+
+    <div class="popup-box">
+
+        <h2>💀 GAME OVER</h2>
+
+       <p class="game-over-text">
+            Yah, semua nyawamu habis.<br>
+            Coba lagi dan raih skor lebih tinggi!
+        </p>
+
+        <button id="restartBtn" class="btn-portfolio">
+            🔄 Main Lagi
+        </button>
+
+    </div>
+
+    <p id="coordinate">
+        X : 0
+        <br>
+        Y : 0
+    </p>
+
+    <p id="message"></p>
+
+
+</div>
+
+<!-- MediaPipe -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+<!-- JavaScript -->
+<script src="../ai/camera.js"></script>
+<script src="../ai/handTracking.js"></script>
+<script src="../ai/egg.js"></script>
+
+</body>
+</html>

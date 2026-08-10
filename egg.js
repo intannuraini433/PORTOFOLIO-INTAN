@@ -32,6 +32,9 @@ let eggX = 320;
 let eggY = 20;
 
 let eggSpeed = 2;
+const eggSpeedAwal = 2;
+const eggSpeedMaksimal = 9;
+const kenaikanSpeedPerTelur = 0.4;
 
 let eggCaught = false;
 let gamePaused = false;
@@ -113,6 +116,12 @@ function moveEgg() {
         score++;
 
         scoreText.textContent = `🥚 Score : ${score}`;
+
+        // Tingkatkan kecepatan telur secara bertahap seiring skor naik
+        eggSpeed = Math.min(
+            eggSpeedMaksimal,
+            eggSpeedAwal + score * kenaikanSpeedPerTelur
+        );
 
         // Suara
         catchSound.currentTime = 0;
@@ -225,6 +234,9 @@ restartBtn.onclick = () => {
     // Reset score dan nyawa
     score = 0;
     lives = 3;
+
+    // Reset kecepatan telur ke awal
+    eggSpeed = eggSpeedAwal;
 
     // Popup mission bisa muncul lagi
     popupSudahMuncul = false;
